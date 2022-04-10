@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./calculator_icon.png">
+    <title>Calculator</title>
+
+    <style>
+        *
+        {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        .container
+        {
+            width: 100%;
+            height: 100vh; 
+            background-color: lightgray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .calculator
+        {
+            color: white;
+            width: 20%;
+            padding: 40px 20px;
+            background-color: black;
+            border-radius: 15%;
+
+        }
+        .user_input
+        {
+            width: 100%;
+            height: 70px; 
+            
+        }
+        .controls
+        {
+            padding: 30px 0px 0px 0px; 
+            width: 100%;
+            background-color: black;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            row-gap: 10px;
+            column-gap: 10px;
+            border-radius: inherit;            
+
+        }
+        .inp
+        {
+            width: 100%;
+            height: 100%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 20px;
+            font-weight: bold;
+            padding-right: 15px; 
+            text-align: right; 
+            outline: none;
+            background-color: gray;
+            border-radius: 30px;
+            
+        }
+        ::placeholder
+        {
+            color: black;
+
+        }
+        .control_button
+        {
+            color: green;
+            flex-basis: 20%; 
+            height: 40px; 
+            border-radius: 50%;
+            border: 1px solid white;
+            font-weight: bolder;
+            font-size: 18px;
+            
+        }
+        .control_button:active
+        {
+            background-color: black;
+            color: white;
+            box-shadow: 0 0 10px 5px rgba(10, 211, 111, 0.7);
+            
+        }
+        .switchbtn
+        {   
+            float: right;
+            margin: 15px 0 0 0;
+            padding: 5px;
+            background-color: tomato;
+            color: white;
+            font-weight: bolder;
+            font-size: 14px;
+            border-radius: 25%; 
+
+        }
+        .switchbtn:active
+        {
+            background-color: red;
+            color: white;
+            box-shadow: 0 0 10px 5px rgba(10, 211, 111, 0.7);
+        }
+
+    </style>
+</head>
+<body>
+    <section class="container">
+        <div class="calculator">
+            <div class="user_input">
+                <input readonly type="text" class="inp">
+            </div>
+            <div class="switch">
+                <button class="switchbtn" onclick="onoff()">ON/OFF</button>
+            </div>
+            <div class="controls">
+                <button class="control_button"  onclick="setValue(7)" disabled>7</button>
+                <button class="control_button"  onclick="setValue(8)" disabled>8</button>
+                <button class="control_button"  onclick="setValue(9)" disabled>9</button>
+                <button class="control_button"  onclick="setValue('+')" disabled>+</button>
+
+                <button class="control_button"  onclick="setValue(4)" disabled>4</button>
+                <button class="control_button"  onclick="setValue(5)" disabled>5</button>
+                <button class="control_button"  onclick="setValue(6)" disabled>6</button>
+                <button class="control_button"  onclick="setValue('-')" disabled>-</button>
+
+                <button class="control_button"  onclick="setValue(1)" disabled>1</button>
+                <button class="control_button"  onclick="setValue(2)" disabled>2</button>
+                <button class="control_button"  onclick="setValue(3)" disabled>3</button>
+                <button class="control_button"  onclick="setValue('x')" disabled>X</button>
+
+                <button class="control_button"  onclick="setValue(0)" disabled>0</button>
+                <button class="control_button"  onclick="setValue('00')" disabled>00</button>
+                <button class="control_button"  onclick="backSpace()" disabled>&#8592</button>
+                <button class="control_button"  onclick="setValue('/')" disabled>/</button>
+
+                <button class="control_button"  onclick="sqrt()" disabled>sqrt</button>
+                <button class="control_button"  onclick="setValue('.')" disabled>.</button>
+                <button class="control_button"  onclick="clearAll()" disabled>AC</button>
+                <button class="control_button"  onclick="dispAns()" disabled>=</button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <script src="./calculator.js"></script>
+    
+</body>
+</html>
